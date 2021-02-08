@@ -1,4 +1,3 @@
-# 512x512
 # adding custom paintings into minecraft
 from PIL import Image
 
