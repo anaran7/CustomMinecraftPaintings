@@ -1,11 +1,14 @@
+# 512x512
 # adding custom paintings into minecraft
 from PIL import Image
+
+size = 128
 
 # copies image into kzpng
 def copyImage(newImage, masterPng, startX, startY, multiplierX, multiplierY):
     newImage = newImage.convert('RGBA')
-    for x in range(0, 16 * multiplierX):
-      for y in range(0, 16 * multiplierY):
+    for x in range(0, size * multiplierX):
+      for y in range(0, size * multiplierY):
          r,g,b,a = newImage.getpixel((x,y))
          masterPng.putpixel((startX + x,startY + y), (r,g,b,a))
     #return masterPng
@@ -13,12 +16,8 @@ def copyImage(newImage, masterPng, startX, startY, multiplierX, multiplierY):
 
 
 
-#Open original png size = (256,256)
+#Open original png size = (2048,2048)
 ogImg = Image.open('kz.png')
-
-#get first image #27 total
-#pImages = [Image.open('1.png') for i in range(27)]
-
 
 
 
@@ -27,8 +26,8 @@ for i in range(0,7):
     picName = str(i) + '.png'
     try:
         pImage = Image.open(picName)
-        pImage = pImage.resize((16, 16), Image.ANTIALIAS)
-        copyImage(pImage, ogImg, 16*i, 0, 1, 1)
+        pImage = pImage.resize((size, size), Image.ANTIALIAS)
+        copyImage(pImage, ogImg, size*i, 0, 1, 1)
     except:
         print(picName + ' not found')
 
@@ -37,8 +36,8 @@ for i in range(0,5):
     picName = str(i+7) + '.png'
     try:
         pImage = Image.open(picName)
-        pImage = pImage.resize((32, 16), Image.ANTIALIAS)
-        copyImage(pImage, ogImg, 32*i, 16*2, 2, 1)
+        pImage = pImage.resize(((size*2), size), Image.ANTIALIAS)
+        copyImage(pImage, ogImg, (size*2)*i, size*2, 2, 1)
     except:
         print(picName + ' not found')
 
@@ -47,8 +46,8 @@ for i in range(0,2):
     picName = str(i+12) + '.png'
     try:
         pImage = Image.open(picName)
-        pImage = pImage.resize((16, 32), Image.ANTIALIAS)
-        copyImage(pImage, ogImg, 16*i, 16*4, 1, 2)
+        pImage = pImage.resize((size, (size*2)), Image.ANTIALIAS)
+        copyImage(pImage, ogImg, size*i, size*4, 1, 2)
     except:
         print(picName + ' not found')
 
@@ -56,8 +55,8 @@ for i in range(0,2):
 picName0 = str(14) + '.png'
 try:
     pImage = Image.open(picName)
-    pImage = pImage.resize((64, 32), Image.ANTIALIAS)
-    copyImage(pImage, ogImg, 0, 16*6, 4, 2)
+    pImage = pImage.resize(((size*4), (size*2)), Image.ANTIALIAS)
+    copyImage(pImage, ogImg, 0, size*6, 4, 2)
 except:
     print(picName + ' not found')
 
@@ -67,8 +66,8 @@ for i in range(0,6):
     picName = str(i+15) + '.png'
     try:
         pImage = Image.open(picName)
-        pImage = pImage.resize((32, 32), Image.ANTIALIAS)
-        copyImage(pImage, ogImg, 32*i, 16*8, 2, 2)
+        pImage = pImage.resize(((size*2), (size*2)), Image.ANTIALIAS)
+        copyImage(pImage, ogImg, (size*2)*i, size*8, 2, 2)
     except:
         print(picName + ' not found')
 
@@ -77,8 +76,8 @@ for i in range(0,3):
     picName = str(i+21) + '.png'
     try:
         pImage = Image.open(picName)
-        pImage = pImage.resize((64, 64), Image.ANTIALIAS)
-        copyImage(pImage, ogImg, 64*i, 16*12, 4, 4)
+        pImage = pImage.resize(((size*4),(size*4)), Image.ANTIALIAS)
+        copyImage(pImage, ogImg,(size*4)*i, size*12, 4, 4)
     except:
         print(picName + ' not found')
 
@@ -87,8 +86,8 @@ for i in range(0,3):
 picName = str(i+24) + '.png'
 try:
     pImage = Image.open(picName)
-    pImage = pImage.resize((64, 64), Image.ANTIALIAS)
-    copyImage(pImage, ogImg, 16*12, 0, 4, 4)
+    pImage = pImage.resize(((size*4),(size*4)), Image.ANTIALIAS)
+    copyImage(pImage, ogImg, size*12, 0, 4, 4)
 except:
     print(picName + ' not found')
 
@@ -100,8 +99,8 @@ for i in range(0,2):
     picName = str(i+25) + '.png'
     try:
         pImage = Image.open(picName)
-        pImage = pImage.resize((64, 48), Image.ANTIALIAS)
-        copyImage(pImage, ogImg, 16*12, 64+(48*i), 4, 3)
+        pImage = pImage.resize(((size*4), (size*3)), Image.ANTIALIAS)
+        copyImage(pImage, ogImg, size*12,(size*4)+((size*3)*i), 4, 3)
     except:
         print(picName + ' not found')
 
