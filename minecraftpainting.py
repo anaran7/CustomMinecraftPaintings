@@ -104,5 +104,5 @@ for i in range(0,2):
     except:
         print(picName + ' not found')
 
-ogImg.save('kz1.png')
+ogImg.save('kz.png')
 
