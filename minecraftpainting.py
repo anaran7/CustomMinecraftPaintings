@@ -16,13 +16,13 @@ def copyImage(newImage, masterPng, startX, startY, multiplierX, multiplierY):
 
 
 #Open original png size = (2048,2048)
-ogImg = Image.open('kz.png')
+ogImg = Image.open('image-collage/kz.png')
 
 
 
-#change the first 7 images
+#change the first 7 images 0,1,2,3,4,5,6
 for i in range(0,7):
-    picName = str(i) + '.png'
+    picName = 'images/' + str(i) + '.png'
     try:
         pImage = Image.open(picName)
         pImage = pImage.resize((size, size), Image.ANTIALIAS)
@@ -30,9 +30,9 @@ for i in range(0,7):
     except:
         print(picName + ' not found')
 
-#change the first 7 images
+#change the first 7 images 7,8,9,10,11
 for i in range(0,5):
-    picName = str(i+7) + '.png'
+    picName = 'images/' + str(i+7) + '.png'
     try:
         pImage = Image.open(picName)
         pImage = pImage.resize(((size*2), size), Image.ANTIALIAS)
@@ -40,9 +40,9 @@ for i in range(0,5):
     except:
         print(picName + ' not found')
 
-#change the next 2 images
+#change the next 2 images 12, 13
 for i in range(0,2):
-    picName = str(i+12) + '.png'
+    picName = 'images/' + str(i+12) + '.png'
     try:
         pImage = Image.open(picName)
         pImage = pImage.resize((size, (size*2)), Image.ANTIALIAS)
@@ -50,8 +50,9 @@ for i in range(0,2):
     except:
         print(picName + ' not found')
 
-#next image
-picName0 = str(14) + '.png'
+
+#next image 14
+picName = 'images/' + str(14) + '.png'
 try:
     pImage = Image.open(picName)
     pImage = pImage.resize(((size*4), (size*2)), Image.ANTIALIAS)
@@ -60,9 +61,9 @@ except:
     print(picName + ' not found')
 
 
-#change the next 6 images
+#change the next 6 images 15, 16, 17, 18, 19, 20
 for i in range(0,6):
-    picName = str(i+15) + '.png'
+    picName = 'images/' + str(i+15) + '.png'
     try:
         pImage = Image.open(picName)
         pImage = pImage.resize(((size*2), (size*2)), Image.ANTIALIAS)
@@ -70,9 +71,9 @@ for i in range(0,6):
     except:
         print(picName + ' not found')
 
-#change the next 3 images
+#change the next 3 images 21, 22, 23
 for i in range(0,3):
-    picName = str(i+21) + '.png'
+    picName = 'images/' + str(i+21) + '.png'
     try:
         pImage = Image.open(picName)
         pImage = pImage.resize(((size*4),(size*4)), Image.ANTIALIAS)
@@ -82,7 +83,7 @@ for i in range(0,3):
 
 
 #next image
-picName = str(i+24) + '.png'
+picName = 'images/' + str(24) + '.png'
 try:
     pImage = Image.open(picName)
     pImage = pImage.resize(((size*4),(size*4)), Image.ANTIALIAS)
@@ -95,7 +96,7 @@ except:
 
 #change the last 2 images
 for i in range(0,2):
-    picName = str(i+25) + '.png'
+    picName = 'images/' + str(i+25) + '.png'
     try:
         pImage = Image.open(picName)
         pImage = pImage.resize(((size*4), (size*3)), Image.ANTIALIAS)
