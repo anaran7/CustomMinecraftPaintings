@@ -82,7 +82,7 @@ for i in range(0,3):
         print(picName + ' not found')
 
 
-#next image
+#next image 24
 picName = 'images/' + str(24) + '.png'
 try:
     pImage = Image.open(picName)

@@ -59,6 +59,9 @@ class AppDemo(QWidget):
         if event.mimeData().hasImage:
             event.setDropAction(Qt.CopyAction)
             file_path = event.mimeData().urls()[0].toLocalFile()
+            #print(file_path)
+            #pImage = Image.open(file_path)
+            #pImage = pImage.resize((50, 50), Image.ANTIALIAS)
             self.set_image(file_path)
 
             event.accept()
@@ -84,7 +87,8 @@ class Window(QMainWindow):
  
         # setting geometry
         self.setGeometry(0, 0, 800, 800)
-            
+        
+        
         
         self.backgroundLabel = QLabel(self)
         self.backgroundPixMap = QPixmap('image-collage/kz.png')
@@ -92,11 +96,12 @@ class Window(QMainWindow):
         self.backgroundLabel.setMinimumSize(1, 1)
         self.setCentralWidget(self.backgroundLabel) 
  
-        # calling method
-        #self.UiComponents()
- 
+       # calling method
+        self.UiComponents()
+
         # showing all the widgets
         self.show()
+
 
     def resizeEvent(self, event):
         self.backgroundLabel.setPixmap(self.backgroundPixMap.scaled(self.width(), self.height()))
@@ -104,8 +109,19 @@ class Window(QMainWindow):
  
     # method for components
     def UiComponents(self):
-    
-        
+        '''
+
+        win = QWidget()
+        grid = QGridLayout(self)
+	
+        for i in range(0,16):
+            for j in range(1,16):
+                grid.addWidget(AppDemo())
+			
+        win.setLayout(grid)
+        win.show()
+
+        '''
         # creating dock widget
         dock = QDockWidget(self)
  
@@ -116,21 +132,25 @@ class Window(QMainWindow):
         widget = QWidget(self)
  
         # creating a vertical box layout
-        layout = QVBoxLayout(self)
+        layout = QGridLayout(self)
  
         # push button 1
-        push1 = AppDemo()
+        #push1 = AppDemo()
  
         # push button 2
-        push2 = AppDemo()
+        #push2 = AppDemo()
  
         # push button 3
-        push3 = AppDemo()
+        #push3 = AppDemo()
+
+        for i in range(1,17):
+            for j in range(1,17):
+                layout.addWidget(AppDemo(),i,j)
  
         # adding these buttons to the layout
-        layout.addWidget(push1)
-        layout.addWidget(push2)
-        layout.addWidget(push3)
+        #layout.addWidget(push1)
+        #layout.addWidget(push2)
+        #layout.addWidget(push3)
  
         # setting the layout to the widget
         widget.setLayout(layout)
