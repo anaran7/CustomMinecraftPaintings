@@ -27,9 +27,11 @@
     .div18 { grid-area: 9 / 5 / 11 / 7; background-color: rgba(255, 255, 255, 0.8);}
     .div19 { grid-area: 9 / 7 / 11 / 9; background-color: rgba(255, 255, 255, 0.8);}
     .div20 { grid-area: 9 / 9 / 11 / 11; background-color: rgba(255, 255, 255, 0.8);}
-    .div21 { grid-area: 13 / 1 / 17 / 5; background-color: rgba(255, 255, 255, 0.8);}
-    .div22 { grid-area: 13 / 5 / 17 / 9; background-color: rgba(255, 255, 255, 0.8);}
-    .div23 { grid-area: 13 / 9 / 17 / 13; background-color: rgba(255, 255, 255, 0.8);}
-    .div24 { grid-area: 1 / 13 / 5 / 17; background-color: rgba(255, 255, 255, 0.8);}
-    .div25 { grid-area: 5 / 13 / 8 / 17; background-color: rgba(255, 255, 255, 0.8);}
-    .div26 { grid-area: 8 / 13 / 11 / 17; background-color: rgba(255, 255, 255, 0.8);}
+    .div21 { grid-area: 9 / 11 / 11 / 13; background-color: rgba(255, 255, 255, 0.8);}
+    .div22 { grid-area: 13 / 1 / 17 / 5; background-color: rgba(255, 255, 255, 0.8);}
+    .div23 { grid-area: 13 / 5 / 17 / 9; background-color: rgba(255, 255, 255, 0.8);}
+    .div24 { grid-area: 13 / 9 / 17 / 13; background-color: rgba(255, 255, 255, 0.8);}
+    .div25 { grid-area: 1 / 13 / 5 / 17; background-color: rgba(255, 255, 255, 0.8);}
+    .div26 { grid-area: 5 / 13 / 8 / 17; background-color: rgba(255, 255, 255, 0.8);}
+    .div27 { grid-area: 8 / 13 / 11 / 17; background-color: rgba(255, 255, 255, 0.8);}
+    

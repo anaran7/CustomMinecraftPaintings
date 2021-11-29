@@ -94,7 +94,7 @@ except:
 
 
 
-#change the last 2 images
+#change the last 2 images 25 26
 for i in range(0,2):
     picName = 'images/' + str(i+25) + '.png'
     try:
