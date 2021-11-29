@@ -5,11 +5,12 @@ from django.db import connection
 from django.views.decorators.csrf import csrf_exempt
 from .forms import *
 from PIL import Image
+import mimetypes
 
 
 #home url to drag and drop images to create custome minecraft paintings
 def home(request):
-    if request.method == 'GET':
+    if request.method == 'GET' and  request.GET.get('post_id') == '100':
         resetImage()
         
     if request.method == 'POST':
@@ -95,5 +96,3 @@ def resetImage():
     newOG = ogImg.copy()
     newOG.save('minecraftpaintings/static/images/kz.png')
 
-
-    
